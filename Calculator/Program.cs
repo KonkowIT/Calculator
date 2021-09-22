@@ -38,7 +38,7 @@ namespace Calculator
         {
             Console.WriteLine(message);
             string val = Console.ReadLine();
-            if (!(int.TryParse(val, out int valInt)))
+            if (!int.TryParse(val, out int valInt))
             {
                 Console.WriteLine("\nIncorrect number");
                 ExitApp(1);
@@ -52,7 +52,6 @@ namespace Calculator
             int firstValInt = InputValue("Please input the first number:");
             int secondValInt = InputValue("\nPlease input the second number:");
             string operation = ChooseOperation();
-            Person person1 = new Person();
             
             if (operation == "h")
             {
