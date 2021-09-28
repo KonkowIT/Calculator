@@ -27,11 +27,14 @@ namespace Calculator
             Environment.Exit(exitCode);
         }
 
-        public static string ChooseOperation()
+        public static string ChooseOperation
         {
-            Console.WriteLine("\nPlease input the operation type [ h - help ]");
-            string input = Console.ReadLine();
-            return input.ToLower();
+            get
+            {
+                Console.WriteLine("\nPlease input the operation type [ h - help ]");
+                string input = Console.ReadLine();
+                return input.ToLower();
+            }
         }
 
         public static int InputValue(string message)
@@ -51,14 +54,14 @@ namespace Calculator
         {
             int firstValInt = InputValue("Please input the first number:");
             int secondValInt = InputValue("\nPlease input the second number:");
-            string operation = ChooseOperation();
+            string operation = ChooseOperation;
             
             if (operation == "h")
             {
                 do
                 {
                     Console.WriteLine("\nPossible choices:\n - addition ('+' or 'add')\n - subtraction ('-' or 'sub')\n - multiplication ('*' or 'multi')\n - division ('/' or 'div')\n");
-                    operation = ChooseOperation();
+                    operation = ChooseOperation;
                 }
                 while (operation == "h");
             }
